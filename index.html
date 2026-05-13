@@ -668,10 +668,16 @@ import{getAuth,createUserWithEmailAndPassword,signInWithEmailAndPassword,signOut
 import{getDatabase,ref,push,set,get,update,remove,onValue,off,onDisconnect,query,orderByChild,equalTo,limitToLast}from"https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
 import{getStorage,ref as sref,uploadBytes,getDownloadURL}from"https://www.gstatic.com/firebasejs/10.8.0/firebase-storage.js";
 
-const FB={apiKey:"AIzaSyBTJYFK38BnPPzugkeA3f0xn6F_IADATMY",authDomain:"jc-learn-73819.firebaseapp.com",
-  databaseURL:"https://jc-learn-73819.firebaseio.com",projectId:"jc-learn-73819",
-  storageBucket:"jc-learn-73819.appspot.com",messagingSenderId:"625242380317",
-  appId:"1:625242380317:web:77ae8b4430889afabd4ef4"};
+const FB = {
+  apiKey: "AIzaSyBTJYFK38BnPpZugkeA3f0xn6F_IADATMY",
+  authDomain: "jc-learn-73819.firebaseapp.com",
+  databaseURL: "https://jc-learn-73819-default-rtdb.firebaseio.com",
+  projectId: "jc-learn-73819",
+  storageBucket: "jc-learn-73819.firebasestorage.app",
+  messagingSenderId: "625242380317",
+  appId: "1:625242380317:web:77ae8b4430889afabd4ef4"
+};
+  
 const fbApp=initializeApp(FB);
 const auth=getAuth(fbApp);
 const db=getDatabase(fbApp);
