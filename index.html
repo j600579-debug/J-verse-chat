@@ -831,8 +831,8 @@ $("s-btn").addEventListener("click",async()=>{
     const usnap=await get(query(ref(db,"users"),orderByChild("username"),equalTo(uname)));
     if(usnap.exists()){$("s-err").textContent="Username taken";$("s-btn").textContent="Create Account ✦";return}
     const cr=await createUserWithEmailAndPassword(auth,email,pw);
-    await set(ref(db,`users/${cr.user.uid}`),{uid:cr.user.uid,displayName:name,username:uname,bio:"",avatar:"",email,createdAt:Date.now(),online:true,lastSeen:Date.now(),msgCount:0,chatCount:0});
-    await set(ref(db,`usernames/${uname}`),cr.user.uid);
+    await set(ref(db, `messages/user_profile_${cr.user.uid}`), {uid: cr.user.uid, displayName: name, username: uname, bio: "", avatar: "", email, createdAt: Date.now(), online: true, lastSeen: Date.now(), msgCount: 0, chatCount: 0});
+await set(ref(db, `messages/username_list_${uname}`), cr.user.uid);
   }catch(e){$("s-err").textContent=ferr(e.code);$("s-btn").textContent="Create Account ✦"}
 });
 
